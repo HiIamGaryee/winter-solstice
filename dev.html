@@ -182,6 +182,9 @@
          font-size: 18px; 
          text-align: justify;
          }
+         .drawer{
+         display: none;
+         }
          .science-desc{
          text-align: justify;
          }
@@ -294,6 +297,7 @@
          height: auto;}
          .title-text {
          font-size: 40px;
+         margin-top: 20px;
          }
          .welcome-desc{
          padding: 20px;
@@ -339,8 +343,40 @@
          overflow: hidden;
          z-index: 1001; /* Above all other content */
          }
+         .drawer {
+         position: fixed;
+         top: 0;
+         left: 0;
+         right: 0;
+         background-color: #0D47A1;
+         height: 0;
+         overflow: hidden;
+         z-index: 1002; 
+         transition: height 0.5s ease;
+         display: flex;
+         }
+         .drawer p {
+         color: white;
+         text-align: center;
+         margin: 20px 0; 
+         }
+         .drawer a {
+         color: white;   
+         padding: 20px;
+         }
+         .drawer ul {
+         padding: 20px;
+         }
+         #openDrawer {
+         padding: 10px 20px;
+         font-size: 16px;
+         cursor: pointer;
+         }
+         .drawer.open {
+         height: 180px;
+         }
          .close-btn {
-         display: block; /* Show close button when menu is open */
+         display: block; 
          position: absolute;
          top: 20px;
          right: 20px;
@@ -351,7 +387,17 @@
    <body>
       <header id="main-header">
          <i class="fas fa-snowflake header-icon" style="color: rgb(250, 225, 225);"></i>
-         <button class="menu-toggle" id="menu-toggle">&#9776;</button> <!-- Hamburger Icon -->
+         <button class="menu-toggle"  id="openDrawer">&#9776;</button>
+         <div id="drawer" class="drawer">
+            <ul>
+               <li><a href="#science">The Science</a></li>
+               <li><a href="#hemispheres">Solstice Across Hemispheres</a></li>
+               <li><a href="#celebrations">Global Celebrations</a></li>
+               <li><a href="#traditions">Solstice Traditions</a></li>
+               <li><a href="#conclusion">Conclusion</a></li>
+            </ul>
+         </div>
+         <!-- webview header -->
          <nav id="main-nav">
             <ul>
                <li><a href="#science">The Science</a></li>
@@ -487,5 +533,25 @@
          </nav>
          <p  id="footer-nav-copyright">&copy; 2024 ABC Company. All rights reserved.</p>
       </footer>
+      <script>
+         document.getElementById('openDrawer').addEventListener('click', function() {
+             document.getElementById('drawer').classList.add('open');
+         });
+         
+         
+         
+         document.getElementById('drawer').addEventListener('click', function(event) {
+                 if (event.target.tagName === 'A') {
+                     this.classList.remove('open'); // Closes the drawer
+                 }
+             });
+         
+         window.addEventListener('click', function(event) {
+             var drawer = document.getElementById('drawer');
+             if (event.target !== document.getElementById('openDrawer') && !drawer.contains(event.target)) {
+                 drawer.classList.remove('open');
+             }
+         });
+      </script>
    </body>
 </html>
