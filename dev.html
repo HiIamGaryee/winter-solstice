@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta charset="UTF-8">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
       <title>Winter Solstice Celebrations Around the World</title>
@@ -179,7 +180,10 @@
          .welcome-desc{
          padding: 40px 120px;
          font-size: 18px; 
-         text-align: center;
+         text-align: justify;
+         }
+         .science-desc{
+         text-align: justify;
          }
          .celebration {
          border-radius: 12px;
@@ -217,7 +221,7 @@
          border-radius: 8px;
          }
          .header-icon {
-        padding-left: 20px;
+         padding-left: 20px;
          display: block;
          width: auto;
          height: auto; 
@@ -276,6 +280,29 @@
          transform: rotate(360deg);
          }
          }
+         @media (max-width: 950px) {
+         section{   padding: 20px; }
+         #welcome {
+         height: auto;}
+         .title-text {
+         font-size: 40px;
+         }
+         .welcome-desc{
+         padding: 20px;
+         font-size: 18px; 
+         text-align: justify;
+         }
+         #traditions {
+         display :flex; flex-direction: column;
+         }
+         .celebration-box {
+         flex-direction: column;
+         align-items: start;
+         }
+         .conclusion-section {
+         display: block;
+         }
+         }
       </style>
    </head>
    <body>
@@ -293,11 +320,11 @@
       </header>
       <section id="welcome">
          <h1 class="title-text">Celebrating the Winter Solstice</h1>
-         <p class="welcome-desc">The winter solstice is a significant astronomical event that marks the shortest day and the longest night of the year. It occurs annually in December in the Northern Hemisphere and in June in the Southern Hemisphere. This event has been observed and celebrated by cultures around the world for thousands of years, often symbolizing rebirth, reflection, and the triumph of light over darkness.</p>
+         <p class="welcome-desc"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The winter solstice is a significant astronomical event that marks the shortest day and the longest night of the year. It occurs annually in December in the Northern Hemisphere and in June in the Southern Hemisphere. This event has been observed and celebrated by cultures around the world for thousands of years, often symbolizing rebirth, reflection, and the triumph of light over darkness.</p>
       </section>
       <section id="science">
          <h2>The Science Behind the Solstice</h2>
-         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The solstices occur due to the Earth's axial tilt of approximately 23.5 degrees relative to its orbital plane around the Sun. This tilt causes different parts of the Earth to receive varying amounts of sunlight throughout the year, leading to the changing seasons. During the winter solstice, one hemisphere is tilted the farthest away from the Sun, resulting in the shortest period of daylight.
+         <p class="science-desc"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The solstices occur due to the Earth's axial tilt of approximately 23.5 degrees relative to its orbital plane around the Sun. This tilt causes different parts of the Earth to receive varying amounts of sunlight throughout the year, leading to the changing seasons. During the winter solstice, one hemisphere is tilted the farthest away from the Sun, resulting in the shortest period of daylight.
             At the exact moment of the solstice, the Sun reaches its lowest maximum elevation in the sky. In the Northern Hemisphere, this happens around December 21st or 22nd, when the Sun is directly over the Tropic of Capricorn at 23.5 degrees south latitude. In the Southern Hemisphere, the winter solstice occurs around June 20th or 21st, when the Sun is over the Tropic of Cancer at 23.5 degrees north latitude.
             The solstice is a precise moment in time, but its effects are felt throughout the day. The term "solstice" comes from the Latin words "sol" (sun) and "sistere" (to stand still), because the Sun's apparent movement north or south comes to a stop before reversing direction.
          </p>
