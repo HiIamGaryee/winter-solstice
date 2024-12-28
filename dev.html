@@ -18,6 +18,7 @@
          overscroll-behavior-y: none;
          overscroll-behavior-x: none;
          }
+         section{   padding: 60px; }
          header#main-header {
          position: fixed;
          top: 0;
@@ -26,8 +27,8 @@
          z-index: 1000;  
          display: flex;
          justify-content: space-between;
+         align-items: center;
          }
-
          /* Navigation Styling */
          nav#main-nav ul {
          list-style: none;
@@ -42,15 +43,15 @@
          padding: 10px 15px;
          display: inline-block;
          }
-         /* Section Styling */
-         h1, h2 {
+         h1 {
          text-align: center;
          padding: 20px;
          }
-         p {
-         padding: 0 20px;
+         h2 {
+         text-align: center;
+         font-size: 28px;
+         padding-bottom: 20px;
          }
-
          /* Footer Styling */
          footer#main-footer {
          text-align: center;
@@ -59,32 +60,26 @@
          color: white;
          border-top: 1px solid #444; 
          }
-
          nav#footer-nav ul {
          list-style: none;
          padding: 0; 
          }
-
          nav#footer-nav ul li {
          display: inline;
          margin-right: 20px; 
          }
-
          nav#footer-nav ul li a {
          text-decoration: none;
          color: white;
          padding: 10px;
          font-size: 16px; 
          }
-
          #footer-nav-copyright {
          color: rgb(121, 118, 118);
          font-size: 12px; 
          margin-top: 8px;
          }
-
          #hemispheres {
-         padding: 40px;
          color: #ffffff;
          text-align: center;
          display: flex;
@@ -92,90 +87,99 @@
          flex-wrap: wrap;
          gap: 12px;
          }
-
          .hemisphere-box {
-         background-color: #ffffff;
-         color: #333;
+         background-color: rgba(51, 51, 51, 0.2);
+         border: 1px solid #444;
          margin: 20px;
          padding: 20px;
          border-radius: 15px 0 0 15px; 
          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
          flex: 1 1 300px;
-         position: relative; /* For positioning the icon */
+         position: relative;
          }
-
+         .hemisphere-box img {
+         width: 100%; 
+         height: auto; 
+         max-height: 100px;
+         object-fit: contain; 
+         }
          #southern-hemisphere {
          border-radius: 0 15px 15px 0; 
          }
-
          .hemisphere-box ul {
          list-style: none; 
          padding: 0;
          margin: 0;
          text-align: left;
          }
-
          .hemisphere-box ul li {
          position: relative; 
-         padding-left: 40px; 
+         padding-left: 28px; 
          }
-
          .hemisphere-box ul li::before {
          content: '\f2dc'; 
-         font-family: 'Font Awesome 5 Free'; /* Specify icon font */
+         font-family: 'Font Awesome 5 Free'; 
          color: #00BFFF;
          position: absolute;
          left: 0;
          top: 0;
          font-weight: 900; 
          }
-
          .hemisphere-box h3 {
          margin-top: 0;
          color: #007BFF;
          font-size: 20px;
+         margin-bottom: 12px;
          }
-
-  
-
-         .global-celebrations {
-         padding: 40px;
+         .celebrations {
          margin-bottom: 20px; 
          }
-
          .celebration-box {
          margin: 40px;
          padding: auto 80px;
          display: flex;
          align-items: center; 
          }
-
          .celebration-box img {
          width: 80px; 
          margin-right: 40px;
          }
-
-         .celebration-box h3, .celebration-box p {
-         margin: 0;
-         }
-         /* Styles for the Conclusion Section */
          .conclusion-section {
-         padding: 20px;
+         display: grid;
+         grid-template-columns: 2fr 1fr;
          border-radius: 8px;
          text-align: center;
+         align-items: center;
+         gap: 20px; 
          }
-
+         .conclusion-section h2,
+         .conclusion-section p {
+         text-align: left; 
+         }
+         .conclusion-section img {
+         width: 100%; 
+         height: auto; 
+         max-height: 240px;
+         object-fit: contain; 
+         animation: rotateClockwise 10s infinite linear; 
+         }
          #welcome {
-         background-image: url('img/winter-bg-img.jpg');  
+         background-image: url('img/winter-bg-img2.jpg');  
          background-size: cover;  
          background-position: center; 
-         height: 64vh; 
+         height: 60vh; 
          display: flex;
          justify-content: center;
          align-items: center; 
          color: white; 
-         font-weight: bold;
-         font-size: 40px; 
+         font-weight: bold;gap: 12px;
+         font-size: 28px; 
+         flex-direction: column; 
+         }
+         .welcome-desc{
+         padding: 40px 120px;
+         font-size: 18px; 
+         text-align: center;
          }
          .celebration {
          border-radius: 12px;
@@ -192,7 +196,7 @@
          margin-left: 20px;
          }
          .flag-icon {
-         width: 50px; /* SVG flag icon size */
+         width: 50px;
          height: auto;
          margin-right: 20px;
          }
@@ -201,33 +205,37 @@
          grid-template-columns: repeat(3, 1fr);
          gap: 20px;
          text-align: center;
-         padding: 40px;
          }
          .tradition-icon {
-         font-size: 36px; /* Larger icon size */
-         color: #00BFFF; /* Light blue color */
-         margin-bottom: 10px; /* Additional spacing below the icon */
+         font-size: 40px; 
+         color: #00BFFF; 
          }
          .tradition-box {
-         background-color: #333;
+         background-color: rgba(51, 51, 51, 0.2);
          border: 1px solid #444;
          padding: 20px;
          border-radius: 8px;
+         }
+         .header-icon {
+        padding-left: 20px;
+         display: block;
+         width: auto;
+         height: auto; 
          }
          .tradition-icon {
          margin: auto;
          display: block;
          width: 50px;
-         height: 50px; /* Adjust size based on actual SVG */
+         height: 50px; 
          }
-         .tradition-title {
+         .sub-title {
          font-weight: bold;
          margin-top: 10px;
          }
-         .tradition-description {
+         .sub-desc {
          margin-top: 5px;
          }
-         .funny-text {
+         .title-text {
          font-weight: bold;
          font-size: 80px;
          background: linear-gradient(to right, #013875, #00BFFF, #013875); 
@@ -236,7 +244,6 @@
          -webkit-text-fill-color: transparent;
          color: transparent;
          border: 3px solid; 
-         border-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red) 1; 
          padding: 10px;
          border-radius: 8px; 
          font-family: 'Comic Sans MS', cursive, sans-serif; 
@@ -248,14 +255,34 @@
          margin: 20px auto;
          display: block;
          }
+         .divider-divider {
+         border: 1px solid #444;
+         width: 100%;
+         margin: 20px auto;
+         display: block;
+         }
+         .full-height-center {
+         height: auto; 
+         display: flex;
+         align-items: center; 
+         justify-content: center; 
+         flex-direction: column;
+         }
+         @keyframes rotateClockwise {
+         from {
+         transform: rotate(0deg);
+         }
+         to {
+         transform: rotate(360deg);
+         }
+         }
       </style>
    </head>
    <body>
       <header id="main-header">
-         <i class="fas fa-snowflake tradition-icon" style="color: rgb(250, 225, 225);"></i>
+         <i class="fas fa-snowflake header-icon" style="color: rgb(250, 225, 225);"></i>
          <nav id="main-nav">
             <ul>
-               <li><a href="#introduction">Introduction</a></li>
                <li><a href="#science">The Science</a></li>
                <li><a href="#hemispheres">Solstice Across Hemispheres</a></li>
                <li><a href="#celebrations">Global Celebrations</a></li>
@@ -265,24 +292,24 @@
          </nav>
       </header>
       <section id="welcome">
-         <h1 class="funny-text">Celebrating the Winter Solstice</h1>
+         <h1 class="title-text">Celebrating the Winter Solstice</h1>
+         <p class="welcome-desc">The winter solstice is a significant astronomical event that marks the shortest day and the longest night of the year. It occurs annually in December in the Northern Hemisphere and in June in the Southern Hemisphere. This event has been observed and celebrated by cultures around the world for thousands of years, often symbolizing rebirth, reflection, and the triumph of light over darkness.</p>
       </section>
-      <section id="introduction">
-         <h2>Introduction to the Winter Solstice</h2>
-         <p>The winter solstice is a significant astronomical event that marks the shortest day and the longest night of the year. It occurs annually in December in the Northern Hemisphere and in June in the Southern Hemisphere. This event has been observed and celebrated by cultures around the world for thousands of years, often symbolizing rebirth, reflection, and the triumph of light over darkness.</p>
-      </section>
-
-
-      <div class="gradient-divider"></div>
       <section id="science">
          <h2>The Science Behind the Solstice</h2>
-         <p>The solstices occur due to the Earth's axial tilt of approximately 23.5 degrees relative to its orbital plane around the Sun. This tilt causes different parts of the Earth to receive varying amounts of sunlight throughout the year, leading to the changing seasons. During the winter solstice, one hemisphere is tilted the farthest away from the Sun, resulting in the shortest period of daylight.</p>
-         <p>At the exact moment of the solstice, the Sun reaches its lowest maximum elevation in the sky. In the Northern Hemisphere, this happens around December 21st or 22nd, when the Sun is directly over the Tropic of Capricorn at 23.5 degrees south latitude. In the Southern Hemisphere, the winter solstice occurs around June 20th or 21st, when the Sun is over the Tropic of Cancer at 23.5 degrees north latitude.</p>
-         <p>The solstice is a precise moment in time, but its effects are felt throughout the day. The term "solstice" comes from the Latin words "sol" (sun) and "sistere" (to stand still), because the Sun's apparent movement north or south comes to a stop before reversing direction.</p>
+         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The solstices occur due to the Earth's axial tilt of approximately 23.5 degrees relative to its orbital plane around the Sun. This tilt causes different parts of the Earth to receive varying amounts of sunlight throughout the year, leading to the changing seasons. During the winter solstice, one hemisphere is tilted the farthest away from the Sun, resulting in the shortest period of daylight.
+            At the exact moment of the solstice, the Sun reaches its lowest maximum elevation in the sky. In the Northern Hemisphere, this happens around December 21st or 22nd, when the Sun is directly over the Tropic of Capricorn at 23.5 degrees south latitude. In the Southern Hemisphere, the winter solstice occurs around June 20th or 21st, when the Sun is over the Tropic of Cancer at 23.5 degrees north latitude.
+            The solstice is a precise moment in time, but its effects are felt throughout the day. The term "solstice" comes from the Latin words "sol" (sun) and "sistere" (to stand still), because the Sun's apparent movement north or south comes to a stop before reversing direction.
+         </p>
+      </section>
+      <div class="gradient-divider"></div>
       </section>
       <section id="hemispheres">
-         <h2>Solstice Across Hemispheres</h2>
+         <div class="full-height-center">
+            <h2>Solstice Across Hemispheres</h2>
+         </div>
          <article class="hemisphere-box" id="northern-hemisphere">
+            <img src="img/N-Hemispheres.png" alt="Northern Hemisphere"> 
             <h3>Northern Hemisphere</h3>
             <ul>
                <li><strong>Season:</strong> Beginning of winter.</li>
@@ -292,6 +319,7 @@
             </ul>
          </article>
          <article class="hemisphere-box" id="southern-hemisphere">
+            <img src="img/S-Hemispheres.png" alt="Southern Hemisphere"> 
             <h3>Southern Hemisphere</h3>
             <ul>
                <li><strong>Season:</strong> Start of summer.</li>
@@ -301,76 +329,83 @@
             </ul>
          </article>
       </section>
-      <section class="global-celebrations" id="celebrations">
+      <section class="celebrations" id="celebrations">
          <h2>Global Celebrations of the Winter Solstice</h2>
          <article class="celebration-box" id="newgrange">
             <img src="img/ireland-flag.png" alt="Ireland Flag">
             <div>
-               <h3>Newgrange - Ireland</h3>
-               <p>The prehistoric monument of Newgrange is aligned with the rising sun on the winter solstice. Built over 5,000 years ago, it predates Stonehenge and the Egyptian pyramids. Each year, a beam of sunlight illuminates the inner chamber, symbolizing the victory of light over darkness.</p>
+               <div class="sub-title">Newgrange - Ireland</div>
+               <p class="sub-desc">The prehistoric monument of Newgrange is aligned with the rising sun on the winter solstice. Built over 5,000 years ago, it predates Stonehenge and the Egyptian pyramids. Each year, a beam of sunlight illuminates the inner chamber, symbolizing the victory of light over darkness.</p>
             </div>
          </article>
+         <div class="divider-divider"></div>
          <article class="celebration-box" id="intiraymi">
             <img src="img/peru-flag.png" alt="Peru Flag">
             <div>
-               <h3>Inti Raymi - Peru</h3>
-               <p>Although traditionally held during the June solstice, which is the winter solstice in the Southern Hemisphere, Inti Raymi is an ancient Incan festival honoring the Sun god Inti. The celebration includes music, dancing, and sacrifices, reflecting the importance of the Sun in agricultural societies.</p>
+               <div class="sub-title">Inti Raymi - Peru</div>
+               <p class="sub-desc">Although traditionally held during the June solstice, which is the winter solstice in the Southern Hemisphere, Inti Raymi is an ancient Incan festival honoring the Sun god Inti. The celebration includes music, dancing, and sacrifices, reflecting the importance of the Sun in agricultural societies.</p>
             </div>
          </article>
+         <div class="divider-divider"></div>
          <article class="celebration-box" id="modranicht">
             <img src="img/anglo-flag.jpg" alt="Anglo Flag">
             <div>
-               <h3>Modranicht - Anglo-Saxon Tradition</h3>
-               <p>Meaning "Mother's Night," Modranicht was observed by the Anglo-Saxons on the eve of the winter solstice. It was a time to honor female deities and ancestral mothers, symbolizing fertility and the rebirth of the Sun.</p>
+               <div class="sub-title">Modranicht - Anglo-Saxon Tradition</div>
+               <p class="sub-desc">Meaning "Mother's Night," Modranicht was observed by the Anglo-Saxons on the eve of the winter solstice. It was a time to honor female deities and ancestral mothers, symbolizing fertility and the rebirth of the Sun.</p>
             </div>
          </article>
+         <div class="divider-divider"></div>
          <article class="celebration-box" id="koliada">
             <img src="img/eastern-european-flag.png" alt="Eastern European Flag">
             <div>
-               <h3>Koliada - Eastern Europe</h3>
-               <p>Koliada is a Slavic festival celebrated during the winter solstice. Traditions include singing carols, feasting, and lighting fires to symbolize the return of the Sun. The festival has influenced modern Christmas and New Year traditions in the region.</p>
+               <div class="sub-title">Koliada - Eastern Europe</div>
+               <p class="sub-desc">Koliada is a Slavic festival celebrated during the winter solstice. Traditions include singing carols, feasting, and lighting fires to symbolize the return of the Sun. The festival has influenced modern Christmas and New Year traditions in the region.</p>
             </div>
          </article>
       </section>
       <section id="traditions">
-         <h2>Common Solstice Traditions</h2>
+         <div class="full-height-center">
+            <h2>Common Solstice Traditions</h2>
+         </div>
          <div class="tradition-box">
             <i class="fas fa-fire-alt tradition-icon"></i>
-            <div class="tradition-title">Bonfires and Candles</div>
-            <p class="tradition-description">Lighting fires and candles is a widespread tradition to represent light overcoming darkness.</p>
+            <div class="sub-title">Bonfires and Candles</div>
+            <p class="sub-desc">Lighting fires and candles is a widespread tradition to represent light overcoming darkness.</p>
          </div>
          <div class="tradition-box">
             <i class="fas fa-utensils tradition-icon"></i>
-            <div class="tradition-title">Feasting</div>
-            <p class="tradition-description">Communities gather to share meals, strengthening social bonds during the cold months.</p>
+            <div class="sub-title">Feasting</div>
+            <p class="sub-desc">Communities gather to share meals, strengthening social bonds during the cold months.</p>
          </div>
          <div class="tradition-box">
             <i class="fas fa-gift tradition-icon"></i>
-            <div class="tradition-title">Gift-Giving</div>
-            <p class="tradition-description">Exchanging gifts symbolizes goodwill and sharing abundance.</p>
+            <div class="sub-title">Gift-Giving</div>
+            <p class="sub-desc">Exchanging gifts symbolizes goodwill and sharing abundance.</p>
          </div>
          <div class="tradition-box">
             <i class="fas fa-tree tradition-icon"></i>
-            <div class="tradition-title">Decorating with Evergreens</div>
-            <p class="tradition-description">Using evergreen plants like holly and mistletoe represents eternal life and protection.</p>
+            <div class="sub-title">Decorating with Evergreens</div>
+            <p class="sub-desc">Using evergreen plants like holly and mistletoe represents eternal life and protection.</p>
          </div>
          <div class="tradition-box">
             <i class="fas fa-spa tradition-icon"></i>
-            <div class="tradition-title">Reflection and Renewal</div>
-            <p class="tradition-description">The solstice is a time for introspection, setting intentions for the coming year.</p>
+            <div class="sub-title">Reflection and Renewal</div>
+            <p class="sub-desc">The solstice is a time for introspection, setting intentions for the coming year.</p>
          </div>
       </section>
       </div>
       <section class="conclusion-section" id="conclusion">
-         <h2>Conclusion</h2>
-         <p>
-            The winter solstice is a profound event that connects humanity across time and space. Despite differences in culture and climate, people around the world share common themes in their celebrations—hope, renewal, and the enduring human spirit. Understanding the science behind the solstice enhances our appreciation of these traditions and highlights our connection to the cosmos.
-         </p>
+         <div>
+            <h2>Conclusion</h2>
+            <p>
+               The winter solstice is a profound event that connects humanity across time and space. Despite differences in culture and climate, people around the world share common themes in their celebrations—hope, renewal, and the enduring human spirit. Understanding the science behind the solstice enhances our appreciation of these traditions and highlights our connection to the cosmos.
+            </p>
+         </div>
+         <img src="img/planet.png" alt="Image of a planet"> 
       </section>
       <footer id="main-footer">
          <nav id="footer-nav">
             <ul>
-               <li><a href="#introduction">Introduction</a></li>
                <li><a href="#science">The Science</a></li>
                <li><a href="#hemispheres">Solstice Across Hemispheres</a></li>
                <li><a href="#celebrations">Global Celebrations</a></li>
